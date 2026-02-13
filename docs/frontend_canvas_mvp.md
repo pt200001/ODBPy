@@ -48,9 +48,7 @@ const API_BASE = import.meta.env.VITE_API_BASE_URL || "http://localhost:8000";
 export async function uploadAndParse(file) {
   const formData = new FormData();
   formData.append("file", file);
-  const { data } = await axios.post(`${API_BASE}/api/upload-and-parse`, formData, {
-    headers: { "Content-Type": "multipart/form-data" },
-  });
+  const { data } = await axios.post(`${API_BASE}/api/upload-and-parse`, formData);
   return data;
 }
 
